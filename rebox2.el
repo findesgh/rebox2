@@ -70,7 +70,7 @@
 ;;    Default `rebox-style-loop' should work for most programming modes, however,
 ;;    you may want to set the style you prefer.
 ;;
-;;    Here is an customization example that
+;;    Here is a customization example that
 ;;
 ;;      - sets comments to use "/* ... */" style in c++-mode
 ;;      - adds Doxygen box style for C++
@@ -199,9 +199,9 @@
 
 ;; For comments held within boxes, it is painful to fill paragraphs, while
 ;; stretching or shrinking the surrounding box "by hand", as needed.  This
-;; piece of GNU Emacs LISP code eases my life on this.  I find only fair,
+;; piece of GNU Emacs LISP code eases my life on this. I find only fair,
 ;; while giving all sources for a package using such boxed comments, to also
-;; give the means I use for nicely modifying comments.  So here they are!
+;; give the means I use for nicely modifying comments. So here they are!
 
 ;; The function `rebox-comment' automatically discovers the extent of the
 ;; boxed comments near the cursor, possibly refills the text, then adjusts the
@@ -262,7 +262,7 @@
 ;; use boxes in my things, very little at first, but more and more as time
 ;; passed, yet not fully sure it was a good move.  Later, many friends
 ;; spontaneously started to use this tool for real, some being very serious
-;; workers.  This finally convinced me that boxes are acceptable, after all.
+;; workers. This finally convinced me that boxes are acceptable, after all.
 
 (require 'newcomment)
 
