@@ -225,7 +225,8 @@
 ;; A programming language is associated with comment delimiters.  Values are
 ;; 100 for none or unknown, 200 for `/*' and `*/' as in plain C, 300 for `//'
 ;; as in C++, 400 for `#' as in most scripting languages, 500 for `;' as in
-;; LISP or assembler and 600 for `%' as in TeX or PostScript.
+;; LISP or assembler, 600 for `%' as in TeX or PostScript and 700 for `!'
+;; as in modern Fortran.
 
 ;; Box quality differs according to language. For unknown languages (100) or
 ;; for the C language (200), values are 10 for simple, 20 for rounded, and 30
@@ -296,11 +297,11 @@
 ;; Box templates.  First number is style, second is recognition weight.
 (defconst rebox-templates
 
-  ;; Generic programming language templates.  Adding 300 replaces
-  ;; `?' by `/', for C++ style comments.  Adding 400 replaces `?' by
-  ;; `#', for scripting languages.  Adding 500 replaces `?' by ';',
-  ;; for LISP and assembler.  Adding 600 replaces `?' by `%', for
-  ;; TeX and PostScript.
+  ;; Generic programming language templates. Adding 300 replaces
+  ;; `?' by `/', for C++ style comments. Adding 400 replaces `?' by
+  ;; `#', for scripting languages. Adding 500 replaces `?' by ';',
+  ;; for LISP and assembler. Adding 600 replaces `?' by `%', for
+  ;; TeX and PostScript. Adding 700 replaces `?' by `!', for Fortran.
 
   '((10 114
         "?box123456")
@@ -920,7 +921,7 @@ header.
 ;; Template numbering dependent code.
 
 (defvar rebox-language-character-alist
-  '((3 . "/") (4 . "#") (5 . ";") (6 . "%"))
+  '((3 . "/") (4 . "#") (5 . ";") (6 . "%") (7 . "!"))
   "Alist relating language to comment character, for generic languages.")
 
 ;;; Regexp to match the comment start, given a LANGUAGE value as index.
@@ -933,6 +934,7 @@ header.
    "^[ \t]*#+"                          ; 4
    "^[ \t]*\;+"                         ; 5
    "^[ \t]*%+"                          ; 6
+   "^[ \t]*\!+"                         ; 7
    ])
 
 
